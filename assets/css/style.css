@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+* {
+  font-family: sans-serif;
+}
+
+/* ヘッダースタイリング */
+.header {
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header__container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  color: #fff;
+  padding: 0 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header__logo a {
+  text-decoration: none;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ハンバーガーメニュー */
+
+.hamburger {
+  width: 50px;
+  height: 80px;
+  position: relative;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.5s;
+}
+
+.hamburger span::before {
+  top: 10px;
+}
+
+.hamburger span::after {
+  bottom: 10px;
+}
+
+.hamburger.open span {
+  background-color: transparent;
+}
+
+.hamburger.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.open span::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* ナビゲーションメニュー */
+
+.nav {
+  position: fixed;
+  width: 60%;
+  height: 100vh;
+  top: 80px;
+  right: -100%;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 50px 0;
+  transition: all 0.5s;
+  border-top: #fff 1px solid;
+}
+
+.nav__item a {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 0 20px 50px;
+  text-transform: uppercase;
+}
+
+.nav__item a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.nav.open {
+  right: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#section1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.main-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  min-height: 120vh;
+  object-fit: cover;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+}
+.content p {
+  opacity: 0;
+  font-size: 20px;
+  white-space: nowrap;
+  font-family: "Arial", sans-serif;
+  transform: translateY(20px);
+  animation: fadeInText 1.5s ease-out forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: white;
+}
+.section2__text {
+  margin-right: 100px;
+}
+
+.content-weapper {
+  display: flex;
+  max-width: 1000px;
+  width: 90%;
+  gap: 20px;
+  align-items: center;
+}
+.content-weapper img {
+  width: 30%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.content-weapper p {
+  width: 70%;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+#section3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  background-color: white;
+  padding: 40px;
+  padding-left: 70px;
+  gap: 10px;
+}
+
+.author-image {
+  width: 100%;
+  max-width: 400px;
+  height: 60vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  gap: 5px;
+}
+
+.author-image img {
+  width: 100%; /* 画像をエリア内に収める */
+  max-width: 400px; /* 画像の最大幅を指定 */
+  height: auto;
+  border-radius: 10px; /* 角を少し丸める（好みに応じて調整） */
+}
+
+.author-info {
+  width: 30%;
+  max-width: 600px;
+  margin-left: 30px;
+}
+
+.section4{
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #828CA3;
+  padding-bottom: 50px;
+}
+.section-title{
+  color: #BF797B;
+  background-color: #828CA3;
+  text-align: center;
+  font-size: 40px;
+}
+
+.slider{
+  display: flex;
+  gap: 10px;
+  transition: transform 0.5s easy-in-out;
+  background-color: #828CA3;
+  padding: 50px;
+}
+.slide {
+  flex: 0 0 200px; /* 画像サイズの統一 */
+  height: 300px; /* 長方形にする */
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto 7%;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像を縦横比を崩さずフィット */
+}
+.slider-btn {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn { left: -40px; }
+.next-btn { right: -40px; }
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.view-all-container {
+  text-align: center;
+  padding-top: 30px;
+  background-color: #828CA3;
+}
+
+
+
+
+#section5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #828CA3; /* 背景色を統一 */
+  width: 100%; /* セクション全体をカバー */
+  overflow: hidden;
+}
+.slider-title{
+  color: #BF797B;
+  background-color: #828CA3;
+  text-align: center;
+  font-size: 40px;
+  padding: 10px 0;
+  width: 100%;
+}
+.slider-container2 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slider-diary {
+  display: flex;
+  gap: 20px; /* スライドの間隔 */
+  width: 200%; /* 2倍の長さにする（無限ループを作るため） */
+  animation: slideLoop 30s linear infinite; /* 30秒でスライド */
+  padding: 50px;
+}
+.slide2 {
+  flex: 0 0 200px; /* 画像サイズの統一 */
+  width: 250px;
+  max-height: 300px; /* 長方形にする */
+  overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.slide2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* 画像にも角丸を適用 */
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+.slide2:hover img {
+  filter: brightness(25%);
+}
+/* オーバーレイ（最初は非表示） */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(70, 93, 170, 0.5); /* 半透明の黒 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0; /* 初期状態は非表示 */
+  transition: opacity 0.3s ease;
+}
+
+/* ホバー時にオーバーレイを表示 */
+.slide2:hover .overlay {
+  opacity: 1;
+}
+@keyframes slideLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.footer {
+  background-color: #f8f9fa; /* 背景色（薄いグレー） */
+  color: #333; /* 文字色（濃いグレー） */
+  text-align: center; /* 文字を中央寄せ */
+  padding: 15px; /* 余白 */
+  font-size: 14px; /* 文字サイズ */
+}
+
+.footer p {
+  margin: 5px 0;
+}
