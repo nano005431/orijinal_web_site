@@ -18,21 +18,22 @@
             </button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="/">もくじ</a></li>
-                    <li class="nav__item"><a href="#">ごあいさつ</a></li>
-                    <li class="nav__item"><a href="#">人気な本</a></li>
-                    <li class="nav__item"><a href="#">私の日記</a></li>
-                    <li class="nav__item"><a href="#">みんなの感想</a></li>
+                    <li class="nav__item"><a href="#section1">Greating</a></li>
+                    <li class="nav__item"><a href="#section2">Turning Point</a></li>
+                    <li class="nav__item"><a href="#section4">The Best Book</a></li>
+                    <li class="nav__item"><a href="#section5">diary</a></li>
+                    <li class="nav__item"><a href="#section6">Recommended Movie</a></li>
                 </ul>
             </nav>
         </div>
-        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/main.js" defer></script>
     </header>
    
     <section id="section1">
         <div class="main-video"><video src="./assets/img/sky_video_black.mp4" loop autoplay muted></video></div>
-        <div class="content">
-            <p>あなたの能力は、今日のあなたの行動によって、開花されるのを待っています</p>
+        <div class="content" >
+            <p class="text1">あなたの能力は、今日のあなたの行動によって、開花されるのを待っています</p>
+            <p class="text1">Your abilities are waiting to blossom through your actions today.</p>
         </div>
     </section>
 
@@ -71,55 +72,91 @@
 
 
     <section id="section4">
-        <h2 class="section-title">The Best Book</h2>
-        <div class="slider-wrapper1">
-           <button class="slider-btn prev-btn">←</button>
-           <div class="slider-container1">
-                <div class="slider">
-                       <div class="slide"><img src="./assets/img/sart line.jpg" alt="スタートライン"></div>
-                       <div class="slide"><img src="./assets/img/tegamiya_jyukenn.jpg" alt="手紙屋受験"></div>
-                       <div class="slide"><img src="./assets/img/life_traver.jpg" alt="ライフトラベラー"></div>
-                       <div class="slide"><img src="./assets/img/kimitoaetakara.jpg" alt="君がきたから"></div>
-                       <div class="slide"><img src="./assets/img/unnten_sya.jpg" alt="運転者"></div>
-                       <div class="slide"><img src="./assets/img/kimitoaetakara.jpg" alt="君と会えたから"></div>
-                       <div class="slide"><img src="./assets/img/tegamiya_book.jpg" alt="手紙屋 就活"></div>
-                       <div class="slide"><img src="./assets/img/kenjyanosyo.jpg" alt="賢者の書"></div>
-                       <div class="slide"><img src="./assets/img/jyoukyou_story.jpg" alt="上京物語"></div>
-                       <div class="slide"><img src="./assets/img/time_capuseru.jpg" alt="タイムカプセル"></div>
-                </div>
-           </div>
-           <button class="slider-btn next-btn">→</button>
+        <div class="horizontal_scroll">
+            <article class="sticky">
+                <h2 class="section-title">The Best Book</h2>
+
+                    <div class="scroller">
+                        <!-- <button class="slider-btn prev-btn">←</button> -->
+                            <div class="slider-container1">
+                                <div class="slider">
+                                    <div class="slide">
+                                        <span class="ranking-single">1</span>
+                                        <img src="./assets/img/unnten_sya.jpg" alt="運転者">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">2</span>
+                                        <img src="./assets/img/kimitoaetakara.jpg" alt="キミと会えたから">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">3</span>
+                                        <img src="./assets/img/jyoukyou_story.jpg" alt="上京物語">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">4</span>
+                                        <img src="./assets/img/kimigakitabasyo.jpg" alt="君がきた場所">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">5</span>
+                                        <img src="./assets/img/kenjyanosyo.jpg" alt="賢者の書">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">6</span>
+                                        <img src="./assets/img/tegamiya_jyukenn.jpg" alt="手紙屋 受験">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">7</span>
+                                        <img src="./assets/img/tegamiya_book.jpg" alt="手紙屋 就活">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">8</span>
+                                        <img src="./assets/img/sart line.jpg" alt="スタートライン">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-single">9</span>
+                                        <img src="./assets/img/life_traver.jpg" alt="ライフトラベラー">
+                                    </div>
+                                    <div class="slide">
+                                        <span class="ranking-double">10</span>
+                                        <img src="./assets/img/time_capuseru.jpg" alt="タイムカプセル">
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- <button class="slider-btn next-btn">→</button> -->
+                    </div>
+                
+            </article>
         </div>
         
     </section>
 
 
   <section id="section5">
-        <h2 class="slider-title">diary</h2>
+        <h2 class="slider-title">Diary</h2>
         <div class="slider-wrapper2"></div>
         <div class="slider-container2">
             <div class="slider-diary">
-                <div class="slide2"><a href="diary1.html"><img src="./assets/img/hana_photo.jpeg" alt="日記1"><p class="slide-text">日記1: 本との出会い</p></a></div>
-                <div class="slide2"><a href="diary2.html"><img src="./assets/img/shadow_photo.jpg" alt="日記2"><p class="slide-text">日記2: 読書の変化</p></a></div>
-                <div class="slide2"><a href="diary3.html"><img src="./assets/img/2022-11-16_18-47-37_610.jpeg" alt="日記3"><p class="slide-text">日記3: 心に残る言葉</p></a></div>
-                <div class="slide2"><a href="diary4.html"><img src="./assets/img/2022-10-08_11-51-46_950 (2022-10-14T16_41_07.632).jpeg" alt="日記4"><p class="slide-text">日記4: 価値観の変化</p></a></div>
-                <div class="slide2"><a href="diary5.html"><img src="https://placehold.jp/300x200.png" alt="日記5"><p class="slide-text">日記5: 素晴らしい日々</p></a></div>
-                <div class="slide2"><a href="diary6.html"><img src="https://placehold.jp/300x200.png" alt="日記6"><p class="slide-text">日記6: 大切なこと</p></a></div>
-                <div class="slide2"><a href="diary7.html"><img src="https://placehold.jp/300x200.png" alt="日記7"><p class="slide-text">日記7:</p></a></div>
-                <div class="slide2"><a href="diary8.html"><img src="https://placehold.jp/300x200.png" alt="日記8"><p class="slide-text">日記8:</p></a></div>
-                <div class="slide2"><a href="diary9.html"><img src="https://placehold.jp/300x200.png" alt="日記9"><p class="slide-text">日記9:</p></a></div>
-                <div class="slide2"><a href="diary10.html"><img src="https://placehold.jp/300x200.png" alt="日記10"><p class="slide-text">日記10:</p></a></div>
+                <div class="slide2"><a href="diary1.html"><img class=dairy-a src="./assets/img/hana_photo.jpeg" alt="日記1"><p class="slide-text">1</p></a></div>
+                <div class="slide2"><a href="diary2.html"><img class=dairy-a src="./assets/img/shadow_photo.jpg" alt="日記2"><p class="slide-text">2</p></a></div>
+                <div class="slide2"><a href="diary3.html"><img class=dairy-a src="./assets/img/2022-11-16_18-47-37_610.jpeg" alt="日記3"><p class="slide-text">3</p></a></div>
+                <div class="slide2"><a href="diary4.html"><img class=dairy-a src="./assets/img/2022-10-08_11-51-46_950 (2022-10-14T16_41_07.632).jpeg" alt="日記4"><p class="slide-text">4</p></a></div>
+                <div class="slide2"><a href="diary5.html"><img class=dairy-a src="./assets/img/latte_art.jpg" alt="日記5"><p class="slide-text">5</p></a></div>
+                <div class="slide2"><a href="diary6.html"><img class=dairy-a src="./assets/img/morning_sky.jpg" alt="日記6"><p class="slide-text">6</p></a></div>
+                <div class="slide2"><a href="diary7.html"><img class=dairy-a src="./assets/img/pepar_airplain.jpg" alt="日記7"><p class="slide-text">7</p></a></div>
+                <div class="slide2"><a href="diary8.html"><img class=dairy-a src="./assets/img/holding_flower.jpg" alt="日記8"><p class="slide-text">8</p></a></div>
+                <div class="slide2"><a href="diary9.html"><img class=dairy-a src="./assets/img/street_photo.jpg" alt="日記9"><p class="slide-text">9</p></a></div>
+                <div class="slide2"><a href="diary10.html"><img class=dairy-a src="./assets/img/final_photo.jpg" alt="日記10"><p class="slide-text">10</p></a></div>
                  <!-- 2回目 -->
-                <div class="slide2"><a href="diary1.html"><img src="./assets/img/hana_photo.jpeg" alt="日記1"><p class="slide-text">日記1: 本との出会い</p></a></div>
-                <div class="slide2"><a href="diary2.html"><img src="./assets/img/shadow_photo.jpg" alt="日記2"><p class="slide-text">日記2: 読書の変化</p></a></div>
-                <div class="slide2"><a href="diary3.html"><img src="./assets/img/2022-11-16_18-47-37_610.jpeg" alt="日記3"><p class="slide-text">日記3: 心に残る言葉</p></a></div>
-                <div class="slide2"><a href="diary4.html"><img src="./assets/img/2022-10-08_11-51-46_950 (2022-10-14T16_41_07.632).jpeg" alt="日記4"><p class="slide-text">日記4: 価値観の変化</p></a></div>
-                <div class="slide2"><a href="diary5.html"><img src="https://placehold.jp/300x200.png" alt="日記5"><p class="slide-text">日記5: 素晴らしい日々</p></a></div>
-                <div class="slide2"><a href="diary6.html"><img src="https://placehold.jp/300x200.png" alt="日記6"><p class="slide-text">日記6: 大切なこと</p></a></div>
-                <div class="slide2"><a href="diary7.html"><img src="https://placehold.jp/300x200.png" alt="日記7"><p class="slide-text">日記7:</p></a></div>
-                <div class="slide2"><a href="diary8.html"><img src="https://placehold.jp/300x200.png" alt="日記8"><p class="slide-text">日記8:</p></a></div>
-                <div class="slide2"><a href="diary9.html"><img src="https://placehold.jp/300x200.png" alt="日記9"><p class="slide-text">日記9:</p></a></div>
-                <div class="slide2"><a href="diary10.html"><img src="https://placehold.jp/300x200.png" alt="日記10"><p class="slide-text">日記10:</p></a></div>
+                <div class="slide2"><a href="diary1.html"><img class=dairy-a src="./assets/img/hana_photo.jpeg" alt="日記1"><p class="slide-text">1</p></a></div>
+                <div class="slide2"><a href="diary2.html"><img class=dairy-a src="./assets/img/shadow_photo.jpg" alt="日記2"><p class="slide-text">2</p></a></div>
+                <div class="slide2"><a href="diary3.html"><img class=dairy-a src="./assets/img/2022-11-16_18-47-37_610.jpeg" alt="日記3"><p class="slide-text">3</p></a></div>
+                <div class="slide2"><a href="diary4.html"><img class=dairy-a src="./assets/img/2022-10-08_11-51-46_950 (2022-10-14T16_41_07.632).jpeg" alt="日記4"><p class="slide-text">4</p></a></div>
+                <div class="slide2"><a href="diary5.html"><img class=dairy-a src="./assets/img/latte_art.jpg" alt="日記5"><p class="slide-text">5</p></a></div>
+                <div class="slide2"><a href="diary6.html"><img class=dairy-a src="./assets/img/morning_sky.jpg" alt="日記6"><p class="slide-text">6</p></a></div>
+                <div class="slide2"><a href="diary7.html"><img class=dairy-a src="./assets/img/pepar_airplain.jpg" alt="日記7"><p class="slide-text">7</p></a></div>
+                <div class="slide2"><a href="diary8.html"><img class=dairy-a src="./assets/img/holding_flower.jpg" alt="日記8"><p class="slide-text">8</p></a></div>
+                <div class="slide2"><a href="diary9.html"><img class=dairy-a src="./assets/img/street_photo.jpg" alt="日記9"><p class="slide-text">9</p></a></div>
+                <div class="slide2"><a href="diary10.html"><img class=dairy-a src="./assets/img/final_photo.jpg" alt="日記10"><p class="slide-text">10</p></a></div>
             </div>
         </div>
         <!-- <div class="view-all-container">
@@ -127,8 +164,17 @@
             <a href="all-diary.html" class="view-all-btn">すべての日記を見る</a>
         </div> -->
  </section>
+ <section id="section6">
+    <h2 class="section6-title">Recommended Movie</h2>
+    <div class="video-container">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/AIj01dT_o5o?si=48BG02uzJy6U4a65" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BVdgxl4cX9Q?si=MrsJ3nOTbB0t1zqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+ </section>
+
  <footer>
-    <p>さくせいしゃなのかだよ～ん</p>
-    <p>つくったひ:めいびー3がつ6か</p>
+    <p>© 2025 Nanoka Otoshi. (Maybe)All Rights Reserved.</p>
+
+</footer>
 </body>
 </html>

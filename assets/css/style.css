@@ -57,7 +57,7 @@
   content: "";
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: #333;
   transition: all 0.5s;
 }
 
@@ -91,24 +91,25 @@
   height: 100vh;
   top: 80px;
   right: -100%;
-  background-color: rgba(0, 0, 0, 0);
+  /* background-color: rgba(0, 0, 0, 0); */
+  background: rgba(130, 140, 163, 0.4); /* さらに柔らかい透明感 */
+  backdrop-filter: blur(5px); /* 背景をぼかしてガラス風に */
   padding: 50px 0;
   transition: all 0.5s;
-  border-top: #fff 1px solid;
+  /* border-top: #fff 1px solid; */
 }
 
 .nav__item a {
   display: block;
   font-size: 20px;
-  color: #fff;
+  color: #BF797B;
   text-decoration: none;
   padding: 20px 0 20px 50px;
   text-transform: uppercase;
 }
 
 .nav__item a:hover {
-  background-color: #fff;
-  color: black;
+  background-color: #333;
 }
 
 .nav.open {
@@ -136,7 +137,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   overflow: hidden;
 }
 .main-video video {
@@ -145,22 +146,23 @@ body {
   left: 0;
   overflow: hidden;
   width: 100vw;
-  min-height: 120vh;
+  min-height: 100vh;
   object-fit: cover;
 }
 .content {
   position: absolute;
+  overflow: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #333;
   text-align: center;
   z-index: 1;
   padding: 20px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0);
 }
-.content p {
+.text1 {
   opacity: 0;
   font-size: 20px;
   white-space: nowrap;
@@ -169,6 +171,8 @@ body {
   animation: fadeInText 1.5s ease-out forwards;
   animation-delay: 1s;
 }
+
+
 @keyframes fadeInText {
   from {
     opacity: 0;
@@ -179,6 +183,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 #section2 {
   display: flex;
@@ -250,14 +255,67 @@ body {
   margin-left: 30px;
 }
 
-.section4{
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
+
+
+/* 縦スクロールで横スクロールを実現 */
+body {
+  height: 200vh; /* スクロールできるように */
+  margin: 0;
+  overflow-x: clip;
+  background-color: #828CA3;
+  background-attachment: fixed;
+}
+ .section4{
+  position: sticky;
+  top: 30px;
+  /* width: 80%; */
+  width: 100vw;
+  height: 80px;
+  margin: 50px auto;
   border-radius: 20px;
   background-color: #828CA3;
   padding-bottom: 50px;
+  scrollbar-width: none; /* スクロールバーを非表示（Firefox用） */
+} 
+article:not(.sticky) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+.horizontal_scroll{
+  --sticky-container-height:100vh;
+  height: var(--sticky-container-height);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.horizontal_scroll .sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+.horizontal_scroll .scroller{
+  display: flex;
+  overflow: auto;
+}
+.horizontal_scroll .scroller.nobar{
+  overflow: hidden;
+}
+.horizontal_scroll .scroller > * {
+  flex-basis: 66%;
+  flex-shrink: 0;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+}
+.horizontal_scroll .scroller>*:not(:first-child){
+  margin-left:1%
 }
 .section-title{
   color: #BF797B;
@@ -265,25 +323,53 @@ body {
   text-align: center;
   font-size: 40px;
 }
-
+/* スライダー全体 */
+ /* .slider-container1 {
+  background-color: #828CA3;
+ }   */
 .slider{
   display: flex;
   gap: 10px;
   transition: transform 0.5s easy-in-out;
+  will-change: transform;
   background-color: #828CA3;
   padding: 50px;
 }
 .slide {
+  position: relative;
   flex: 0 0 200px; /* 画像サイズの統一 */
   height: 300px; /* 長方形にする */
-  overflow: hidden;
-  border-radius: 10px;
+  overflow: visible;
+  /* border-radius: 10px; */
   margin: auto 7%;
+}
+.slide .ranking-single{
+  position: absolute;
+  font-size: 26px;
+  color: white;
+  background-color: #828CA3;
+  border: 1px solid white;
+  padding: 7px 20px;
+  border-radius: 50%;
+  top: -20px;
+  left: -18px;
+}
+.slide .ranking-double{
+  position: absolute;
+  font-size: 26px;
+  color: white;
+  background-color: #828CA3;
+  border: 1px solid white;
+  padding: 7px 12px;
+  border-radius: 50%;
+  top: -20px;
+  left: -18px;
 }
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* 画像を縦横比を崩さずフィット */
+  border-radius: 10px;
 }
 .slider-btn {
   position: absolute;
@@ -298,8 +384,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.prev-btn { left: -40px; }
-.next-btn { right: -40px; }
+/* .prev-btn { left: -60px; } */
+.next-btn { right: -60px; }
 
 .slider-btn:hover {
   background: rgba(255, 255, 255, 1);
@@ -312,15 +398,13 @@ body {
 }
 
 
-
-
 #section5{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #828CA3; /* 背景色を統一 */
   width: 100%; /* セクション全体をカバー */
   overflow: hidden;
@@ -334,33 +418,36 @@ body {
   width: 100%;
 }
 .slider-container2 {
-  width: 100%;
+  width: 100%; 
   overflow: hidden;
   position: relative;
 }
 .slider-diary {
   display: flex;
-  gap: 20px; /* スライドの間隔 */
-  width: 200%; /* 2倍の長さにする（無限ループを作るため） */
-  animation: slideLoop 30s linear infinite; /* 30秒でスライド */
-  padding: 50px;
+  gap: 100px; /* スライドの間隔 */
+  width: calc(360px * 20); /* 画像が20個あるので、その分の幅を確保 */
+  animation: slideLoop 160s linear infinite;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #828CA3;
+  height: 80vh;
 }
 .slide2 {
-  flex: 0 0 200px; /* 画像サイズの統一 */
-  width: 250px;
-  max-height: 300px; /* 長方形にする */
-  overflow: hidden;
+  flex: 0 0 360px; 
+  width: 10%;
+  height: 500px;
+  max-height: 320px; /* 長方形にする */
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
 }
 .slide2 img {
   width: 100%;
-  height: auto;
+  height: 80%;
   display: block;
   border-radius: 10px; /* 画像にも角丸を適用 */
   object-fit: cover;
   transition: filter 0.3s ease;
+  /* padding-bottom: ; */
 }
 .slide2:hover img {
   filter: brightness(25%);
@@ -368,7 +455,7 @@ body {
 /* オーバーレイ（最初は非表示） */
 .overlay {
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -388,19 +475,77 @@ body {
 .slide2:hover .overlay {
   opacity: 1;
 }
-@keyframes slideLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* テキスト（常に表示） */
+.slide-text {
+  width: 100%;
+  height: 20%; /* 画像の下に配置 */
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  bottom: 0; /* 画像の下部に配置 */
+  left: 0;  
+  
 }
 
-.footer {
-  background-color: #f8f9fa; /* 背景色（薄いグレー） */
-  color: #333; /* 文字色（濃いグレー） */
+.slider-diary a{
+  text-decoration-color: transparent;
+  text-decoration-line: none;
+}
+
+@keyframes slideLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+  
+}
+
+#section6{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+.section6-title{
+  color: #BF797B;
+  background-color: #828CA3;
+  text-align: center;
+  font-size: 40px;
+  padding: 10px 0;
+  width: 100%;
+}
+.video-container {
+  display: flex;
+  justify-content: center; /* 動画を中央揃え */
+  gap: 50px; /* 動画間のスペース */
+  width: 100%;
+  height: auto;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+/* .video-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0.1px  rgba(0, 0, 0, 0.1);
+} */
+.video-container iframe{
+  width: 300px;
+  height: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-container iframe:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0.1px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color:#828CA3; /* 背景色（薄いグレー） */
+  color:#333 ;
   text-align: center; /* 文字を中央寄せ */
   padding: 15px; /* 余白 */
   font-size: 14px; /* 文字サイズ */
 }
 
-.footer p {
+footer p {
   margin: 5px 0;
 }
