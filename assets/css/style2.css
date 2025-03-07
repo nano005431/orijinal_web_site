@@ -57,8 +57,9 @@
   content: "";
   width: 100%;
   height: 2px;
-  background-color: #333;
+  background-color: whitesmoke;
   transition: all 0.5s;
+  
 }
 
 .hamburger span::before {
@@ -96,22 +97,99 @@
   backdrop-filter: blur(5px); /* 背景をぼかしてガラス風に */
   padding: 50px 0;
   transition: all 0.5s;
+  
   /* border-top: #fff 1px solid; */
 }
 
 .nav__item a {
   display: block;
   font-size: 20px;
-  color: #BF797B;
+  color: #333;
   text-decoration: none;
   padding: 20px 0 20px 50px;
   text-transform: uppercase;
 }
+.nav__list {
+  list-style: none; /* 箇条書きの点を削除 */
+}
 
 .nav__item a:hover {
-  background-color: #333;
-}
+ background-color:#333;
+ color: whitesmoke; 
+} 
 
 .nav.open {
   right: 0;
 }
+
+
+
+body {
+    background-color: #333;
+    height: 100vh; /* スクロールできるように */
+    margin: 0;
+    overflow-x: clip;
+    color: whitesmoke;
+    /* background-attachment: fixed; */
+}
+.diary-container {
+  text-align: center; /* 全体を中央揃え */
+  max-width: 800px; /* コンテンツの幅を制限 */
+  margin: 0 auto; /* 中央配置 */
+  padding: 20px;
+}
+
+.diary-header {
+  display: flex;
+  justify-content: space-between; /* タイトルと日付を左右に配置 */
+  align-items: center;
+  margin-bottom: 20px; /* 写真との間隔 */
+}
+/* .diary-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+} */
+.diary-date {
+  font-size: 16px;
+  color: whitesmoke; /* 少し目立たなくする */
+  margin: 0;
+}
+.diary-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.diary-title-above {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px; /* タイトルと写真の間隔を調整 */
+}
+.diary-container p:first-child {
+  margin-top: 40px; /* タイトルの位置を少し下げる */
+}
+.diary-item {
+  text-align: center; /* 画像を含むコンテンツを中央揃え */
+}
+.diary-img {
+  display: block;
+  width: 400px; /* 画像のサイズ */
+  height: auto;
+  border-radius: 8px;
+}
+
+footer {
+  background-color:#333; /* 背景色（薄いグレー） */
+  color:whitesmoke ;
+  text-align: center; /* 文字を中央寄せ */
+  padding: 15px; /* 余白 */
+  font-size: 14px; /* 文字サイズ */
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+
+
+

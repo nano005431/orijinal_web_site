@@ -57,7 +57,7 @@
   content: "";
   width: 100%;
   height: 2px;
-  background-color: #333;
+  background-color: white;
   transition: all 0.5s;
 }
 
@@ -102,7 +102,7 @@
 .nav__item a {
   display: block;
   font-size: 20px;
-  color: #BF797B;
+  color: white;
   text-decoration: none;
   padding: 20px 0 20px 50px;
   text-transform: uppercase;
@@ -155,7 +155,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #333;
+  color: white;
   text-align: center;
   z-index: 1;
   padding: 20px;
@@ -190,7 +190,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background-color: white;
+  background-color: #333;
 }
 .section2__text {
   margin-right: 100px;
@@ -214,7 +214,7 @@ body {
   width: 70%;
   font-size: 16px;
   line-height: 1.8;
-  color: #333;
+  color: whitesmoke;
 }
 
 #section3 {
@@ -225,10 +225,11 @@ body {
   justify-content: center;
   width: 100vw;
   height: auto;
-  background-color: white;
+  background-color: #333;
   padding: 40px;
   padding-left: 70px;
   gap: 10px;
+  color: whitesmoke;
 }
 
 .author-image {
@@ -253,7 +254,10 @@ body {
   width: 30%;
   max-width: 600px;
   margin-left: 30px;
+  
 }
+
+
 
 
 
@@ -262,7 +266,7 @@ body {
   height: 200vh; /* スクロールできるように */
   margin: 0;
   overflow-x: clip;
-  background-color: #828CA3;
+  background-color: #333;
   background-attachment: fixed;
 }
  .section4{
@@ -273,7 +277,7 @@ body {
   height: 80px;
   margin: 50px auto;
   border-radius: 20px;
-  background-color: #828CA3;
+  background-color: #333;
   padding-bottom: 50px;
   scrollbar-width: none; /* スクロールバーを非表示（Firefox用） */
 } 
@@ -282,7 +286,7 @@ article:not(.sticky) {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: #333;
 }
 .horizontal_scroll{
   --sticky-container-height:100vh;
@@ -312,13 +316,12 @@ article:not(.sticky) {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: black; */
 }
 .horizontal_scroll .scroller>*:not(:first-child){
   margin-left:1%
 }
 .section-title{
-  color: #BF797B;
+  color: #333;
   background-color: #828CA3;
   text-align: center;
   font-size: 40px;
@@ -332,7 +335,7 @@ article:not(.sticky) {
   gap: 10px;
   transition: transform 0.5s easy-in-out;
   will-change: transform;
-  background-color: #828CA3;
+  background-color: #333;
   padding: 50px;
 }
 .slide {
@@ -346,9 +349,9 @@ article:not(.sticky) {
 .slide .ranking-single{
   position: absolute;
   font-size: 26px;
-  color: white;
+  color: #333;
   background-color: #828CA3;
-  border: 1px solid white;
+  border: 1px solid #333;
   padding: 7px 20px;
   border-radius: 50%;
   top: -20px;
@@ -410,7 +413,7 @@ article:not(.sticky) {
   overflow: hidden;
 }
 .slider-title{
-  color: #BF797B;
+  color: #333;
   background-color: #828CA3;
   text-align: center;
   font-size: 40px;
@@ -429,7 +432,7 @@ article:not(.sticky) {
   animation: slideLoop 160s linear infinite;
   padding-top: 80px;
   padding-bottom: 100px;
-  background-color: #828CA3;
+  background-color:#333;
   height: 80vh;
 }
 .slide2 {
@@ -449,26 +452,38 @@ article:not(.sticky) {
   transition: filter 0.3s ease;
   /* padding-bottom: ; */
 }
+.text-below {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
 .slide2:hover img {
   filter: brightness(25%);
+}
+.slide2:hover{
+  .slider-diary{
+    animation-play-state: paused;
+  }
 }
 /* オーバーレイ（最初は非表示） */
 .overlay {
   position: absolute;
-  top: 20%;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(70, 93, 170, 0.5); /* 半透明の黒 */
+  height: 80%;
+  background: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   opacity: 0; /* 初期状態は非表示 */
   transition: opacity 0.3s ease;
+  border-radius: 10px;
 }
 
 /* ホバー時にオーバーレイを表示 */
@@ -484,7 +499,7 @@ article:not(.sticky) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: white;
   bottom: 0; /* 画像の下部に配置 */
   left: 0;  
   
@@ -509,13 +524,17 @@ article:not(.sticky) {
   padding: 20px 0;
 }
 .section6-title{
-  color: #BF797B;
+  color: #333;
   background-color: #828CA3;
   text-align: center;
   font-size: 40px;
   padding: 10px 0;
   width: 100%;
 }
+.slider-diary{
+  color: #fff;
+}
+
 .video-container {
   display: flex;
   justify-content: center; /* 動画を中央揃え */
